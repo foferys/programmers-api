@@ -20,7 +20,7 @@ public class HomeController {
     @Autowired
     private PhraseRepository pRepository;
 
-    @GetMapping("/")
+    @GetMapping({"/", ""})
     public String home(Model model) throws JsonProcessingException {
 
         Phrase randomphrase = pRepository.findRandomPhrase();
