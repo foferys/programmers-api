@@ -17,7 +17,7 @@ A simple api that returns a random funny fact about programming on a GET request
 ### Example Usage
 
 ``` 
-curl http://localhost:8080/getPhrase/random
+curl https://pleasant-recreation-production.up.railway.app/getPhrase/random
 ```
 
 Response
@@ -35,10 +35,10 @@ Response
 
 ### Advanced Usage
 
-<!-- You can request more than one funny fact at a time by using the GET param `count`
+You can request more than one funny fact at a time by using the GET param `count`
 
 ```bash
-curl http://localhost:8080/getPhrase/random?count=3
+curl https://pleasant-recreation-production.up.railway.app/getPhrase/?type=backend
 ```
 
 Response
@@ -46,39 +46,33 @@ Response
 ```json
 {
   "data": [
-    "0": 	"Mother cats teach their kittens to use the litter box.",
-    "1": "A cat can sprint at about thirty-one miles per hour.",
-    "2": "The worlds richest cat is worth $13 million after his human passed away and left her fortune to him."
-  ]
+  {
+  "id": 1,
+  "phrase": "Backend developers always say, \"It worked on my local server.\"",
+  "type": "backend"
+  },
+  {
+  "id": 4,
+  "phrase": "The backend is like a restaurant kitchen: no one sees it, but it’s where the magic happens.",
+  "type": "backend"
+  },
+  {
+  "id": 7,
+  "phrase": "Backend developers can solve any problem, as long as it doesn’t involve CSS.",
+  "type": "backend"
+  },
+  ...
+  ] 
 }
-``` -->
+```
 
 you can retrieve a list of quotes filtered by a specific type (backend, frontend, or generic).
 
 
 ```bash
-curl http://localhost:8080/getPhrase/?type=backend  
+curl https://pleasant-recreation-production.up.railway.app/getPhrase/?type=generic
 ```
 
-Response
-
-```json
-{
-    "data": [
-        {
-            "id": 1,
-            "phrase": "Backend developers always say, 'It worked on my local server.'",
-            "type": "backend"
-        },
-        {
-            "id": 4,
-            "phrase": "Backend developers don’t fear downtime; they fear 'urgent deployments.'",
-            "type": "backend"
-        }
-    ]
-}
-
-```
 
 ### Dedication
 
